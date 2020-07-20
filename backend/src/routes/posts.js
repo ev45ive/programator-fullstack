@@ -16,7 +16,7 @@ routes.get("/", (req, res) => {
         });
 });
 
-// find first One
+// find first One by title
 routes.get("/one", (req, res) => {
     Post.findOne({
         title: {
@@ -29,17 +29,19 @@ routes.get("/one", (req, res) => {
         });
 });
 
-// routes.get("/_id", (req, res) => {
-//     Post.findOne({
-//         _id: {
-//             $regex: req.query._id || ""
-//         },
-//     })
-//         .limit(10)
-//         .then((post) => {
-//             res.send(post);
-//         });
-// });
+//find by EAN number
+routes.get("/EAN", (req, res) => {
+    // Post.findById("5f12e85f48534b303c09e539")
+    Post.find({
+        EAN: {
+            $regex: req.query.EAN || ""
+        },
+    })
+        .limit(10)
+        .then((post) => {
+            res.send(post);
+        });
+});
 
 //delete
 routes.get("/del", (req, res) => {
