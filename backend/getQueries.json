@@ -1,0 +1,1 @@
+{"array":[[{"method":"GET","handler":"http","endpoint":"192.168.0.146:8880/api/products/categories?category=Clothes","from":"85.222.120.170:60164","address_family":"IPv4","status":200,"products_founded":0,"request_time":"2020/07/24 13:07:21"}]]}

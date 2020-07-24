@@ -1,0 +1,76 @@
+#root > div.search-bar {
+  position: fixed;
+  top: 45px;
+  width: 100vw;
+  height: 50px;
+  background: #343a40 !important;
+  z-index: 1;
+}
+#root > div.search-bar > div{
+  background: #343a40 !important;
+}
+
+#root > div > div{
+/* #root > div.search-bar > div.search-bar-items { */
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: none;
+  box-sizing: border-box;
+
+}
+
+#root > div.search-bar > div{
+  height: 50px;
+}
+
+
+#root > div.search-bar > div > div {
+  margin-top: 6px;
+  margin-bottom: 1px;
+  /* margin-left: 3px; */
+  width: 7vw;
+  /* background-color: white; */
+}
+#root > div.search-bar > div > button.search-bar-btn{
+  width: 20vw;
+  box-sizing: border-box;
+  height: 30px;
+  border:  3px solid;
+  border-style: outset;
+  border-radius: 50px;
+  background-color: rgb(44, 44, 44);
+}
+#root > div.search-bar > div > button:active{
+  border-style: inset;
+}
+
+
+#root > div.search-bar > div > button > i {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 25px;
+  color: rgb(192, 192, 192);
+}
+#root > div.search-bar > div > div > i.active {
+  color: #ff5a00;
+}
+#root > div.search-bar > div > div > i:hover {
+  color: #ff5a00;
+}
+
+#root > div > div > input {
+  width: 70vw;
+  height: 30px;
+  border:  3px solid;
+  border-style: inset;
+  border-radius: 50px;
+  box-sizing: border-box;
+  text-align: center;
+
+
+}

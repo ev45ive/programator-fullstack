@@ -1,0 +1,1 @@
+{"array":[[{"method":"GET","handler":"http","endpoint":"192.168.0.146:8880/api/products/search?name=Crestro","from":"5.173.32.148:56813","address_family":"IPv4","status":200,"products_founded":2,"request_time":"2020/07/24 12:43:38"}]]}

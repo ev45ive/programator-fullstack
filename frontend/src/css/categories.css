@@ -1,0 +1,90 @@
+/* #root > div.navbar-parent {
+} */
+#root > div.categories {
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 100vw;
+  height: 75px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  overflow-x: scroll;
+  border-top: 1px solid rgb(45, 210, 240);
+  border-bottom: 1px solid rgb(45, 210, 240);
+  z-index: 1;
+}
+#root > div.categories > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 0px;
+  width: 30vw;
+  color: silver;
+  border: 0px;
+  border-style: outset;
+
+  background:#343a40!important;
+}
+
+#root > div.categories > a.navbar-item.active {
+  border: solid gray 0.001px;
+  border-style: inset;
+  background-color: #272e33!important;
+   color: #ff5a00;
+  text-shadow: #ff5a00 2px 2px 2px 2px;
+
+ }
+#root > div.categories > a.navbar-item > i {
+/* #root > div.navbar-parent > div.categories > a.navbar-item > svg { */
+  font-size: 1.66rem;
+}
+
+#root > div.categories > a.navbar-item > label {
+  margin-top: 10px;
+  font-size: 0.75rem;
+
+}
+#root > div.categories > a.navbar-item > div.navbar-item-color {
+
+  widows: 100%;
+  height: 6px;
+  background-color: red;
+} 
+
+
+@media screen and (min-width: 450px) {
+  #root > div.navbar-parent > div.categories.navbar-bottom-fucking-overflow {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    overflow-x: hidden;
+  }
+  #root > div.navbar-parent > div.categories > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #d0ced1; */
+  
+    padding: 7.5px;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 0px;
+    width: 33.333vw;
+    color: silver;
+    border: 0px;
+    border-style: outset;
+  
+    background:#343a40!important;
+   
+  }
+}

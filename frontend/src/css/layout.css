@@ -1,0 +1,12 @@
+/* #root > div.subpage-lauout{
+  position: fixed;
+  top: 120px;
+} */
+#root > div.page-layout{
+  position: fixed;
+  top:45px;
+  bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 15px;
+}

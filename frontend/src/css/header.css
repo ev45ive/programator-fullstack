@@ -1,0 +1,118 @@
+/* #root > div.navbar-parent {
+} */
+
+#root > header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 45px;
+  display: flex;
+  padding: 0;
+  background: #343a40 !important;
+  z-index: 1;
+}
+
+#root > header > div.weather{
+  width: 10vw;
+  height: 45px;
+}
+
+#root > header > div.welcome{
+  width: 60vw;
+  height: 45px;
+}
+
+
+#root > header > a {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+
+}
+
+#root > header > a.navbar-item {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  font-size: 18px;
+  padding: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* border-radius: 8px; */
+  width: 10vw;
+  color: silver;
+  border: 0px;
+  border-style: outset;
+  background: #343a40 !important;
+}
+
+#root > header > a.navbar-item > label {
+  font-size: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#root > header > a.navbar-item.active {
+  border: solid gray 0.5px;
+  border-style: inset;
+  /* background-color: #272e33!important; */
+  /* background-color:black;  */
+  /* color: #32f0ec; */
+  color: #ff5a00;
+
+  text-shadow: #ff5a00 2px 2px 2px 2px;
+
+  background: #272e33 !important;
+}
+#root > header > a.navbar-item > i {
+  font-size: 18px;
+  align-self: center;
+}
+#root > header > a.navbar-item.active > i {
+  font-size: 18px;
+}
+
+
+#root > header > div{
+  /* position: fixed;
+  right: 0; */
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  width: 6vw;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* border-radius: 50px; */
+  color: silver;
+  border: 0px;
+  border-style: outset;
+  background: #343a40 !important;
+}
+
+#root > header > div > a.navbar-item {
+  height: 60px;
+  width: 6vw;
+  text-align: center;
+}
+
+#root > header > div > a.navbar-item > i {
+  color: silver;
+}
+#root > header > div > a.navbar-item.active {
+  border: solid gray 0.5px;
+  border-style: inset;
+}
+
+#root > header > div > a.navbar-item.active > i{
+  color: #60dafb;
+}
+
+
+@media screen and (min-width: 450px) {
+ 
+}

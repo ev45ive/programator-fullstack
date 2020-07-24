@@ -1,0 +1,104 @@
+#root > div > form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#root > div > form > input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#root > div > form > select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#root > div > form > input[type="text"]:nth-child(6) {
+  height: 100px;
+}
+
+#root > div > form > label {
+  color: black;
+  align-self: center;
+}
+
+#root > div > form > input[type="submit"] {
+  background-color: silver;
+  color: green;
+  font-size: x-large;
+  box-sizing: border-box;
+  border: 5px solid silver;
+  border-style: outset;
+  border-radius: 7px;
+}
+#root > div > form > input[type="submit"]:active {
+  border-style: inset;
+}
+
+#root > div > button {
+  width: 100%;
+  height: 50px;
+  background-color: silver;
+  color: red;
+  font-size: x-large;
+  box-sizing: border-box;
+  border: 5px solid silver;
+  border-style: outset;
+  border-radius: 7px;
+}
+#root > div > button:active {
+  border-style: inset;
+}
+
+#root > div > div.confirm-box {
+  background-color: #f2f2f2;
+  display: none;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+justify-content: stretch;
+  width: 100vw;
+  position: fixed;
+  top: 45px;
+  bottom: 50px;
+  left: 0px;
+  color: red;
+  font-size: x-large;
+  padding: 15px;
+}
+
+#root > div > div > button:nth-child(1) {
+  color: whitesmoke;
+  background-color: red;
+  font-size: x-large;
+  box-sizing: border-box;
+  border: 5px solid silver;
+  border-style: outset;
+  border-radius: px;
+  width: 100%;
+  height: 75px;
+}
+#root > div > div > button:nth-child(2) {
+  color: whitesmoke;
+  background-color: blue;
+  width: 100%;
+  height: 75px;
+  font-size: x-large;
+  box-sizing: border-box;
+  border: 5px solid silver;
+  border-style: outset;
+  border-radius: 0px;
+}
+#root > div > div > button:active {
+  border-style: inset;
+
+}

@@ -7,7 +7,6 @@ mongoose.connect(process.env.MONGO_DB, {
   console.log(`connected ${process.env.MONGO_DB}`)
 })
 
-
 // const Cat = mongoose.model('Cat', { name: String });
 
 // const kitty = new Cat({ name: 'Zildjian' });

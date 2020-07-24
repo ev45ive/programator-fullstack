@@ -1,0 +1,136 @@
+#root{
+    background-color: rgb(44, 44, 44);
+}
+#root > div.subpage-lauout{
+  position: relative;
+  top: 120px;
+  margin-bottom: 50px;
+  /* z-index: 0; */
+  
+}
+
+#root > p{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    text-align: center;
+    border: rgb(100, 100, 100) 2px solid;
+    padding: 15px;
+    background-color: rgb(45, 210, 240);
+    border-style: outset;
+    font-size: larger;
+}
+
+#root > div {
+  /* position: fixed; */
+  width: 100vw;
+  height: max-content;
+  top: 45px;
+  left: 0px;
+  bottom: 60px;
+  box-sizing: border-box;
+  background-color: rgb(44, 44, 44);
+}
+
+#root > div.subpage-lauout > div{
+  
+}
+
+/* product card */
+#root > div > div {
+  width: 33vw;
+  border: rgba(0, 204, 255, 0.89) 10px solid;
+  background-color: rgba(0, 140, 255, 0.37);
+  color: whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* border-top: rgba(255, 0, 0, 0.685) 5px solid; */
+  /* margin-top: 10px; */
+  /* height: 10%; */
+}
+
+
+#root > div > div > img {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+
+  /* height: 10%; */
+
+  width: 50%;
+  object-fit: scale-down;
+  height: 15vh;
+}
+
+#root > div > div > div.description > h5:nth-child(1) {
+  background-color: black;
+  margin-top: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#root > div > div > div.description > div {
+  background-color: rgba(0, 128, 0, 0.459);
+  margin-bottom: 0;
+  text-align: right;
+  color: silver;
+  font-size: larger;
+  box-sizing: border-box;
+}
+
+#root > div > div > div.description {
+  /* background-color: rgb(0, 0, 0); */
+  color: whitesmoke;
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+#root > div > div > div > h5 {
+  /* border: whitesmoke 1px solid; */
+  box-sizing: border-box;
+}
+
+#root > div > div > div > div > button {
+  /* height: 40px; */
+  box-sizing: border-box;
+  border: rgb(44, 44, 44) 1px solid;
+}
+#root > div > div > div.product.cart-btns > button:nth-child(1) {
+  box-sizing: border-box;
+
+  width: 25%;
+}
+#root > div > div > div.product.cart-btns > button:nth-child(2) {
+  width: 25%;
+  box-sizing: border-box;
+}
+#root > div > div > div.product.cart-btns > button:nth-child(3) {
+  box-sizing: border-box;
+
+  width: 50%;
+  background-color: green;
+  color: blanchedalmond;
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#root > div > div > div.product.cart-btns {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 20%;
+}
+/* #root > div > div > div > button{
+width: 100%;
+
+} */
