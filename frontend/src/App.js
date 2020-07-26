@@ -16,7 +16,7 @@ function App() {
       <Switch>
         {/* <Route path="/" exact component={...} />
         <Route path="/api" component={...} /> */}
-        <Route path="/api/posts" exact component={PostsView} />
+        <Route path="/api/posts" exact = {true} component={PostsView} />
         <Route path="/api/posts/init" component={AddPostView} />
 
         <Route path="**" render={() => <h1>404 Page not found </h1>} />
