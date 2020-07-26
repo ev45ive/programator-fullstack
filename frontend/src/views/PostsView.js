@@ -21,7 +21,7 @@ export class PostsView extends React.Component {
     }
     loadPosts = () => {
         axios.get('http://localhost:8080/api/posts')
-            .then(response => console.log(response.data)).catch(error => console.log(error))
+            .then(response => this.setState({posts:response.data})).catch(error => console.log(error))
     }
 
 
