@@ -12,6 +12,8 @@ const routes = express.Router({});
 routes.get("/", async (req, res) => {
   const products = await getAllProducts({
     name: req.query.name,
+    limit: parseInt( req.query.limit),
+    page:  parseInt(req.query.page),
   });
 
   res.send(products);

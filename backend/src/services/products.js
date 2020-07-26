@@ -1,11 +1,17 @@
 import { Product, InitProducts } from "../models/products.js";
 
-export const getAllProducts = async ({ name, limit = 10 }) => {
+export const getAllProducts = async ({ name, limit = 10, page = 1 }) => {
+  // page = 2
+  const skip = (page - 1) * limit;
+
   return Product.find({
     name: {
       $regex: name || "",
+      $options: "-i",
     },
-  }).limit(limit);
+  })
+    .skip(skip)
+    .limit(limit);
 };
 
 export const getOneProduct = async ({ id }) => {
@@ -17,7 +23,7 @@ export const createProduct = async ({ name, description, price, images }) => {
     name,
     description,
     price,
-    images
+    images,
   });
   return product.save();
 };
