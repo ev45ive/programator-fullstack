@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Programator FullStack Products",
+		"_postman_id": "db9b6a0e-f4da-e7b6-de99-c48244c4882a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get products",
+			"request": {
+				"url": "http://localhost:8080/api/products",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"url": "http://localhost:8080/api/products/5f1b1a7cd0ee575bfbe6419f",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"url": "http://localhost:8080/api/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Testowy\",\n\t\"description\":\"OPis \",\n\t\"price\": 120\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

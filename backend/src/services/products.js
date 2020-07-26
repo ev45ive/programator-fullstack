@@ -26,3 +26,8 @@ export const updateProduct = async ({ id, name, description, price }) => {
 
   return product.update({ name, description, price });
 };
+
+export const deleteProduct = async ({ product_id }) => {
+  const result = Product.deleteOne({ _id: product_id });
+  return result;
+};

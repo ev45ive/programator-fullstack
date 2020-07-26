@@ -4,6 +4,7 @@ import {
   getOneProduct,
   createProduct,
   updateProduct,
+  deleteProduct
 } from "../services/products.js";
 
 const routes = express.Router({});
@@ -52,6 +53,12 @@ routes.put("/:product_id", async (req, res) => {
   res.send(result);
 });
 
+
+routes.delete("/:product_id", async (req, res) => {
+  const {product_id} = req.params
+  const result = await deleteProduct({product_id})
+  res.send(result)
+})
 /**
  * Seed database with demo products data
  */
