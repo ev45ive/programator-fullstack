@@ -7,7 +7,7 @@ import routes from "./routes/index.js";
 import cors from 'cors'
 import morgan from 'morgan'
 import errorhandler from 'errorhandler'
-import session from 'session'
+import session from 'express-session'
 
 const app = express();
 
@@ -19,9 +19,10 @@ app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'placki keyboard cat',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: true, 
   cookie: { secure: true }
 }))
+
 
 // Forms
 app.use(express.urlencoded())
