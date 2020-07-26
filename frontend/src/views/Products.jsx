@@ -31,7 +31,7 @@ export const Products = () => {
       name: queryParams.get("name") || '',
     });
     setIsLoading(true);
-    fetch(process.env.API_URL + "/products?" + params.toString())
+    fetch(process.env.REACT_APP_API_URL + "/products?" + params.toString())
       .then((resp) => resp.json())
       .then((data) => setProducts(data))
       .finally(() => setIsLoading(false));
