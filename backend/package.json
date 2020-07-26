@@ -13,10 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.25",
-    "nodemon": "^2.0.4"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "session": "^0.1.0"
   },
   "nodemonConfig": {
     "ignore": [
