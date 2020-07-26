@@ -1,10 +1,24 @@
 import express from "express";
+import { WishList, InitWishList} from "../models/wishlist.js";
 
-const wishlist = express.Router({});
+const routes = express.Router({});
 
-// routes.use('/products')
-wishlist.get("/", (req, res) => {
-  res.send(["wishlist"]);
+routes.get("/", (req, res) => {
+  WishList.find({
+    name: { 
+      $regex: req.query.name || ""
+    },
+  })
+  .limit(10)
+  .then((wishlists) => {
+    res.send(wishlists);
+  });
 });
 
-export default wishlist
+routes.get("/init", (req, res) => {
+  InitWishList().then(() => {
+    res.send("done");
+  });
+});
+
+export default routes;
