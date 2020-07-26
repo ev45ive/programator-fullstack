@@ -12,11 +12,12 @@ export const getOneProduct = async ({ id }) => {
   return Product.findById(id);
 };
 
-export const createProduct = async ({ name, description, price }) => {
+export const createProduct = async ({ name, description, price, images }) => {
   const product = new Product({
     name,
     description,
     price,
+    images
   });
   return product.save();
 };
