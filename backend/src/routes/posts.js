@@ -29,12 +29,13 @@ routes.get("/one", (req, res) => {
         });
 });
 
+
 //find by EAN number
-routes.get("/EAN", (req, res) => {
+routes.get("/:EAN", (req, res) => {
     // Post.findById("5f12e85f48534b303c09e539")
     Post.find({
         EAN: {
-            $regex: req.query.EAN || ""
+            $regex: req.params.EAN || ""
         },
     })
         .limit(10)
