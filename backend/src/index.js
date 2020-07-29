@@ -4,11 +4,31 @@
 import  express from "express";
 import './config/mongo.js'
 import routes from "./routes/index.js";
-import bodyParser from 'body-parser'
+import cors from 'cors'
+import morgan from 'morgan'
+import errorhandler from 'errorhandler'
+import session from 'express-session'
 
 const app = express();
 
-app.use(bodyParser())
+app.use(cors())
+app.use(errorhandler())
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'placki keyboard cat',
+  resave: false,
+  saveUninitialized: true, 
+  cookie: { secure: true }
+}))
+
+
+// Forms
+app.use(express.urlencoded())
+// JSON
+app.use(express.json())
+
 
 app.get('/',(req,res)=>{
   res.send('Hello world!')

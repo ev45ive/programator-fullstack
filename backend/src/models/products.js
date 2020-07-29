@@ -1,9 +1,14 @@
 import mongoose from "mongoose";
 
 export const productSchema = mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    index: true,
+  },
   description: String,
   price: Number,
+  images: { type: [String] },
+  category: String,
 });
 
 export const Product = mongoose.model("Product", productSchema);
