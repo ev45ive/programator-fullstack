@@ -1,7 +1,7 @@
 import faker from "faker";
-import { createProduct } from "../src/services/products.js";
+import { createWishlist } from "../src/services/wishlist.js";
 import  '../src/config/mongo.js'
-import { Product } from "../src/models/products.js";
+import { WishList } from "../src/models/wishlist.js";
 
 
 const getFakeProduct = () => ({
@@ -15,11 +15,11 @@ const products = Array(20).fill(null).map(getFakeProduct); //?
 
 
 (async () => {
-  await Product.deleteMany({}) //?
+  await WishList.deleteMany({}) //?
 
   for(let product of products){
     console.log(product);
-    const result = await createProduct(product)
+    const result = await createWishlist(product)
     console.log(result)
   }
 })()
