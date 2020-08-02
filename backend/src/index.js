@@ -2,12 +2,14 @@
 // dotenv.config({path: __dirname + '../.env'}); /// load from './.env' file
 
 import express from "express";
-import "./config/mongo.js";
-import routes from "./routes/index.js";
 import cors from "cors";
 import morgan from "morgan";
 import errorhandler from "errorhandler";
 import session from "express-session";
+import passport from 'passport'
+import "./config/mongo.js";
+import './config/passport.js'
+import routes from "./routes/index.js";
 
 const app = express();
 app.set("trust proxy", 1); // trust first proxy
@@ -34,9 +36,13 @@ app.use(
     // cookie: { secure: false, sameSite: "none", httpOnly: false },
   })
 );
+// Passport.js
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Forms
 app.use(express.urlencoded({ extended: true }));
+
 // JSON
 app.use(express.json());
 

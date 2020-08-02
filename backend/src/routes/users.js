@@ -1,5 +1,12 @@
 import express from "express";
-import { registerUser, findUsers, logInUser } from "../services/users.js";
+import {
+  registerUser,
+  findUsers,
+  logInUser,
+  findUser,
+} from "../services/users.js";
+import passport from "passport";
+
 const users = express.Router({});
 
 users.get("/", async (req, res) => {
@@ -8,8 +15,12 @@ users.get("/", async (req, res) => {
   res.send(result);
 });
 
-users.get("/me", (req, res) => {
-  res.send(["user 1"]);
+users.get("/me", async (req, res) => {
+  if (req.user) {
+    res.send(await findUser({ id: req.user.id }));
+  }else{
+    res.send({error:'Not Logged in'})
+  }
 });
 
 users.post("/register", async (req, res) => {
@@ -22,10 +33,17 @@ users.post("/register", async (req, res) => {
   }
 });
 
-users.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-  const result = await logInUser({ username, password });
-  res.send(result);
+// users.post("/login", async (req, res) => {
+//   const { username, password } = req.body;
+//   const result = await logInUser({ username, password });
+//   res.send(result);
+// });
+
+// => config/passport.js
+users.post("/login", passport.authenticate("local"), function (req, res) {
+  // If this function gets called, authentication was successful.
+  // `req.user` contains the authenticated user.
+  res.redirect("/api/users/me"); // + req.user.username);
 });
 
 users.post("/confirmEmail", (req, res) => {

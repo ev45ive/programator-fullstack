@@ -10,9 +10,42 @@
 		{
 			"name": "Get products",
 			"request": {
-				"url": "http://localhost:8080/api/products",
+				"url": {
+					"raw": "http://localhost:8080/api/products?limit=2&page=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "page",
+							"value": "4",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
 				"body": {},
 				"description": ""
 			},
@@ -45,6 +78,116 @@
 					"mode": "raw",
 					"raw": "{\n\t\"name\":\"Testowy\",\n\t\"description\":\"OPis \",\n\t\"price\": 120\n}"
 				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "cart update",
+			"request": {
+				"url": "http://localhost:8080/api/cart/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3A5abqwA2f1k_3XAwfzty4x_-M7h8yuzN9.hiYPsQmEQ9rG7YBQlLn4QY7GosE2MQQS%2BflKT0bqBGY;",
+						"description": ""
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3ApJKPHtFbvpVkDyZxk_QUm29Pw0Dbq3XO.BYiWY0gqDe7tCz5BebDQj50%2Fs9FfoZsWFuzWky0j7tU;",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"action\":\"add\",\n\t\"product_id\":\"5f1d62c30bfb3d872085b6f8\",\n\t\"amount\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"request": {
+				"url": "http://localhost:8080/api/cart/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3A5abqwA2f1k_3XAwfzty4x_-M7h8yuzN9.hiYPsQmEQ9rG7YBQlLn4QY7GosE2MQQS%2BflKT0bqBGY;",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users/register",
+			"request": {
+				"url": "http://localhost:8080/api/users/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"test\",\n\t\"email\":\"test@test.com\",\n\t\"password\":\"test\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": " users/login",
+			"request": {
+				"url": "http://localhost:8080/api/users/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"test\", \"password\":\"test\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users/me",
+			"request": {
+				"url": "http://localhost:8080/api/users/me",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"request": {
+				"url": "http://localhost:8080/api/cart",
+				"method": "GET",
+				"header": [],
+				"body": {},
 				"description": ""
 			},
 			"response": []

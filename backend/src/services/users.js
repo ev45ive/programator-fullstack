@@ -29,7 +29,7 @@ export const registerUser = ({ user }) => {
 };
 
 export const logInUser = ({ username, password }) => {
-  return User.where({
+  return User.findOne({
     username,
     password: sha512HashPassword(password, "tajne123koty"),
   });
