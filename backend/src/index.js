@@ -12,16 +12,16 @@ import session from "express-session";
 const app = express();
 app.set("trust proxy", 1); // trust first proxy
 
+app.use(errorhandler());
 // https://medium.com/zero-equals-false/using-cors-in-express-cac7e29b005b
-app.options('*', cors()) // cors preflight
+app.options("*", cors()); // cors preflight
 app.use(
   cors({
     credentials: true,
-    origin:['http://localhost:3000']
+    origin: ["http://localhost:3000"],
     // origin: (origin, callback) => callback(null, [origin]),
   })
 );
-app.use(errorhandler());
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms")
 );
@@ -29,14 +29,14 @@ app.use(
 app.use(
   session({
     secret: "placki keyboard cat",
-    // resave: true,
-    // saveUninitialized: true,
+    resave: true,
+    saveUninitialized: true,
     // cookie: { secure: false, sameSite: "none", httpOnly: false },
   })
 );
 
 // Forms
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 // JSON
 app.use(express.json());
 
