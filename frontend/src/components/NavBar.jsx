@@ -37,6 +37,11 @@ export const NavBar = () => {
                   Cart
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/posts">
+                  Posts
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

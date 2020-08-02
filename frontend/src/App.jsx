@@ -6,7 +6,7 @@ import { Cart, Home, Products } from "./views";
 import { NavBar } from "./components/NavBar";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCartPlus, faImage, faEdit, faTag, faGavel, faPlus, faShoppingBasket, faEnvelope, faKey, faUser, faUserCircle, faSearch, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { PostsView } from "./views/PostsView";
+import { Posts } from "./views/PostsView";
 import { AddPostView } from "./views/AddPostView";
 
 library.add(faCartPlus, faImage, faEdit, faTag, faGavel, faPlus, faShoppingBasket, faSignInAlt, faEnvelope, faKey, faUser, faUserCircle, faSearch);
@@ -23,7 +23,7 @@ function App() {
             <Route path="/home" component={Home} />
             <Route path="/products" component={Products} />
             <Route path="/cart" component={Cart} />
-            <Route path="/posts" component={PostsView} />
+            <Route path="/posts" exact={true} component={Posts} />
             <Route path="/posts/init" component={AddPostView} />
           </Switch>
         </div>
