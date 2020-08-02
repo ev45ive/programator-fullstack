@@ -11,11 +11,11 @@ const getFakeProduct = () => ({
   images: [faker.image.fashion(300,300) + `?random=${Math.random()}`],
 });
 
-const products = Array(20).fill(null).map(getFakeProduct);
+const products = Array(20).fill(null).map(getFakeProduct); //?
 
 
 (async () => {
-  await Product.deleteMany({})
+  await Product.deleteMany({}) //?
 
   for(let product of products){
     console.log(product);
