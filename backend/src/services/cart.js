@@ -1,12 +1,28 @@
-
-export const addToCart = ({ cart, product_id, amount = 1 }) => {
+export const updateCart = ({ cart, action, product_id, amount = 1 }) => {
   let item = cart.items.find((i) => i.id === product_id);
-  
-  if (item) {
-    item.amount++;
-  } else {
-    item = { id: product_id, amount };
-    cart.items.push(item);
+
+  switch (action) {
+    case "add":
+      if (!item) {
+        item = { id: product_id, amount: 0 };
+        cart.items.push(item);
+      }
+      item.amount += amount;
+
+      break;
+    case "remove":
+      if (item) {
+        item.amount -= amount;
+
+        if (item.amount <= 0) {
+          cart.items.splice(cart.items.indexOf(item), 1);
+        }
+      }
+      break;
+
+    default:
+      throw new Error("Unknown cart action " + action);
   }
+
   return cart;
 };

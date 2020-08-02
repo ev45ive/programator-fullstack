@@ -1,5 +1,5 @@
 import express from "express";
-import { addToCart } from "../services/cart.js";
+import { updateCart } from "../services/cart.js";
 
 const routes = express.Router({});
 
@@ -11,18 +11,18 @@ routes.get("/", (req, res) => {
 
 routes.post("/update", (req, res) => {
   const { action, product_id, amount = 1 } = req.body;
+  try {
+    const cart = (req.session.cart = req.session.cart || { items: [] });
 
-  const cart = (req.session.cart = req.session.cart || { items: [] });
+    updateCart({ cart, action, product_id, amount });
 
-  if (action === "add") {
-    addToCart({ cart, product_id, amount });
+    res.send(cart);
+  } catch (e) {
+    res.send({ error: e.message });
   }
-
-  res.send(cart);
 });
 
 export default routes;
-
 
 /* 
 // CORS

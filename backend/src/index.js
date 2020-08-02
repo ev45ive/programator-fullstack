@@ -12,8 +12,9 @@ import session from "express-session";
 const app = express();
 app.set("trust proxy", 1); // trust first proxy
 
+// https://medium.com/zero-equals-false/using-cors-in-express-cac7e29b005b
+app.options('*', cors()) // cors preflight
 app.use(
-  // https://medium.com/zero-equals-false/using-cors-in-express-cac7e29b005b
   cors({
     credentials: true,
     origin:['http://localhost:3000']
